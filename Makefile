@@ -6,7 +6,7 @@
 #    By: egiron-t <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 12:05:42 by egiron-t          #+#    #+#              #
-#    Updated: 2022/07/22 14:49:15 by egiron-t         ###   ########.fr        #
+#    Updated: 2022/07/22 19:36:03 by egiron-t         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,12 @@ WHITE 		= \033[0;97m
 
 all:		compilla
 
-debug: CFLAGS = -Wall -Werror -Wextra -pedantic -g -fsanitize=address
+debug: CFLAGS =  -g -Wall -Werror -Wextra -fsanitize=address
 debug:		compilla
+
+debugleak: CFLAGS = -g -Wall -Werror -Wextra -fsanitize=leak
+debugleak:		compilla
+
 
 compilla: 	$(NAME)
 .c.o:
@@ -56,6 +60,9 @@ fclean:		clean
 
 norm:
 	@norminette $(SRCS) | grep -v Norme -B1 || true
+
+test:
+	@./tests/tester.sh	
 
 re:	fclean all	
 	@echo "$(GREEN)Cleaned and rebuilt everything for pipex!$(DEF_COLOR)"
