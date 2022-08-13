@@ -96,12 +96,25 @@ void	leaks(void)
 {
 	system("leaks pipex");
 }
-
+void borralalista (char **l_paths)
+{
+					if (l_paths)
+    {
+        int i;
+        for (i = 0; *(l_paths + i); i++)
+        {
+            // printf("month=[%s]\n", *(l_paths + i));
+            free(*(l_paths + i));
+        }
+        // printf("\n");
+        free(l_paths);
+    }
+}
 int	main(int argc, char **argv, char **envp)
 {	
  	char		*path;
 	char		**l_paths;
-	// t_comm_path	**comm_dir;
+	t_comm_path	**comm_dir;
 	int			fd; 
 
 	atexit(leaks);
@@ -115,24 +128,13 @@ int	main(int argc, char **argv, char **envp)
 		close(fd);
 		ft_open_outfile(argv[argc - 1]);
 		l_paths = ft_split(path, ':');
-		// comm_dir = ft_accesslist(l_paths, argv, argc);
+		comm_dir = ft_accesslist(l_paths, argv, argc);
 		// ft_command_validation(comm_dir, argv);
 		// ft_first_part(comm_dir[0], envp, argv);
 		// ft_check_errors(comm_dir); 
 
-borralalista(l_paths);
-	// 	printf("%s\n", path);
-	// 			if (l_paths)
-    // {
-    //     int i;
-    //     for (i = 0; *(l_paths + i); i++)
-    //     {
-    //         // printf("month=[%s]\n", *(l_paths + i));
-    //         free(*(l_paths + i));
-    //     }
-    //     // printf("\n");
-    //     free(l_paths);
-    // }
+		borralalista(l_paths);
+
 	
 	}
 	else
