@@ -1,0 +1,31 @@
+- en el main se deben recibir las variable de entorno y los argumentos.(int	main(int argc, char **argv, char **envp))
+- buscamos y guardamos el valor de PATH para saber donde ejecutar los comandos.(path)
+- guardamos en una lista los valores del path (se separan por :)(l_paths)
+- Comprobamos el archivo de entrada (argv[1])
+- Comprobamos el archivo de salida (argv[argc-1])
+
+
+
+
+Funciones autorizadas:
+
+open: 			abre fichero
+close: 			cierra fichero
+read: 			lee buffer en el fichero
+write: 			escribe en el fichero
+malloc: 		asigna memoria
+free: 			libera memoria
+perror: 		imprime el error
+strerror: 	devuelve el codigo de error
+access: 		saber si existe archivo o saber si tenemos permiso para acceder al archivo
+dup: 				clona el descriptor de archivo
+dup2: 			clona el descriptor de archivo y decimos en cual
+execve: 		ejecuta un comando linux
+exit: 			termina el programa
+fork: 			crea un proceso hijo
+pipe: 			empipa dos archivos (o procesos)
+unlink: 		elimina un enlace o un archivo
+wait: 			espera que acabe el proceso hijo creado con fork
+waitpid: 		espera a un hijo especifico
+
+ft_printf y libft

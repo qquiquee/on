@@ -1,0 +1,25 @@
+<mxfile host="65bd71144e">
+    <diagram id="qu0M_mhQesBTxjtTopzy" name="Página-1">
+        <mxGraphModel dx="1480" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="./pipex q &quot;cat&quot; &quot;head -n 5&quot;  qq" style="dashed=0;whitespace=wrap;shape=mxgraph.dfd.start;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="30" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Dale" style="shape=rhombus;html=1;dashed=0;whitespace=wrap;perimeter=rhombusPerimeter;" parent="1" vertex="1">
+                    <mxGeometry x="570" y="240" width="60" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="shape=rhombus;html=1;dashed=0;whitespace=wrap;perimeter=rhombusPerimeter;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="160" width="60" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Fin" style="html=1;dashed=0;whitespace=wrap;shape=mxgraph.dfd.start" vertex="1" parent="1">
+                    <mxGeometry x="240" y="620" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Entrada de datos" style="triangle;whiteSpace=wrap;html=1;dashed=0;direction=south;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="490" width="60" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -117,7 +117,7 @@ int	main(int argc, char **argv, char **envp)
 	t_comm_path	**comm_dir;
 	int			fd; 
 
-	atexit(leaks);
+	// atexit(leaks);
 
 	if (argc == 5)
 	{
@@ -129,11 +129,21 @@ int	main(int argc, char **argv, char **envp)
 		ft_open_outfile(argv[argc - 1]);
 		l_paths = ft_split(path, ':');
 		comm_dir = ft_accesslist(l_paths, argv, argc);
-		// ft_command_validation(comm_dir, argv);
-		// ft_first_part(comm_dir[0], envp, argv);
-		// ft_check_errors(comm_dir); 
+		ft_command_validation(comm_dir, argv);
+		ft_first_part(comm_dir[0], envp, argv);
+		ft_check_errors(comm_dir); 
 
-		borralalista(l_paths);
+
+		// borralalista(l_paths);
+
+printf("path = %s\n", path);
+		printf("argc = %i\n",argc);
+		printf("entorno = %s\n",envp[0]);
+printf("argv[0] = %s\n", argv[0]);
+printf("argv[1] = %s\n", argv[1]);
+printf("argv[2] = %s\n", argv[2]);
+printf("argv[3] = %s\n", argv[3]);
+printf("argv[4] = %s\n", argv[4]);
 
 	
 	}
