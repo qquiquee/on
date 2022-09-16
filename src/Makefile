@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= main.c func_first.c func_error.c func_files.c func_list.c
+SRCS	= main.c
 OBJS	= $(SRCS:.c=.o)
 NAME	= pipex
 CFLAGS	= -Wall -Werror -Wextra 
@@ -67,4 +67,4 @@ test:
 re:	fclean all	
 	@echo "$(GREEN)Cleaned and rebuilt everything for pipex!$(DEF_COLOR)"
 
-.PHONY:	all clean fclean re norm debug test debugleak
+.PHONY:	all clean fclean re norm debug

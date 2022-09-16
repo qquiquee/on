@@ -2,7 +2,7 @@
 - buscamos y guardamos el valor de PATH para saber donde ejecutar los comandos.(path)
 - guardamos en una lista los valores del path (se separan por :)(l_paths)
 - Comprobamos el archivo de entrada (argv[1])
-- Comprobamos el archivo de salida (argv[argc-1])
+- Comprobamos o creamos el archivo de salida (argv[argc-1])
 
 
 
