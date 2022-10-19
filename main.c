@@ -12,48 +12,42 @@
 
 #include "pipex.h"
 
-void	leaks(void)
+void leaks(void)
 {
 	system("leaks pipex");
 }
 
-char	*ft_envp_path(char **envp)
+char **ft_envp_path(char **envp)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (envp != NULL)
 	{
 		if (ft_strncmp(envp[i], "PATH", 4) == 0)
-			return (&envp[i][0]);
+			return ft_split(&envp[i][0], ':');
 		i++;
 	}
 	return (0);
 }
 
-int	main(int argc, char **argv, char **envp)
-{	
- 	char		*path;
-	// char		**l_paths;
-	
+int main(int argc, char **argv, char **envp)
+{
+	char **path;
 
 	// atexit(leaks);
 
 	if (argc == 5)
 	{
-		// Buscamos en envp la variable PATH
 		path = ft_envp_path(envp);
-		// Separamos el path en un array de strings
-		// l_paths = ft_split(path, ':');
-	printf("Primer Argumento: %s\nPrimera variable de entorno: %s\n", argv[1],envp[0]);
-			printf("path completo: %s\n", path);
+
+		printf("primer argumento: %s\n", argv[0]);
+		printf("path primero: %s\n\n", path[0]);
 
 		// printf("Primer path: %s\n", l_paths[0]);
-
-
 		// Comprobamos el archivo de entrada
 		// Comprobamos el archivo de salida
-		
+		ft_freearray(path);
 	}
 	else
 	{

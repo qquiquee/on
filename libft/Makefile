@@ -19,7 +19,8 @@ SRCS 	=	ft_memset.c		\
 			ft_strlen.c    \
 			ft_split.c     \
 			ft_strncmp.c   \
-			ft_substr.c
+			ft_substr.c    \
+			ft_freearray.c 
 											  
 OBJS = $(SRCS:.c=.o)
 
