@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= main.c
+SRCS	= main.c func_first.c func_error.c func_files.c func_list.c
 OBJS	= $(SRCS:.c=.o)
 NAME	= pipex
 CFLAGS	= -Wall -Werror -Wextra 

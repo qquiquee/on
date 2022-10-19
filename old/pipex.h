@@ -32,8 +32,43 @@
 # define COLOR_CYAN		"\033[0;96m"
 # define COLOR_WHITE	"\033[0;97m"
 
+//Commands list
+typedef struct s_comm_path
+{
+	char				**comm;
+	int					ok;
+	struct s_comm_path	*next;
+}	t_comm_path;
+
+//ft_files.c
+void			ft_open_infile(char *arc);
+void			ft_open_outfile(char *arc);
+
+//ft_error_func.c
+void			ft_file_error(char *str);
+void			ft_comm_error(char *str, t_comm_path *var);
+void			ft_check_errors(t_comm_path **comm_dir);
+void			ft_command_validation(t_comm_path **comm_dir, char **argv);
+void			ft_error(int pos, char *argv, t_comm_path *var);
+
 // main.c
-void	leaks(void);
-char	**ft_paths(char **envp, int argc);
+t_comm_path		**ft_accesslist(char **l_paths, char **argv, int argc);
+char			*ft_envp_path(char **envp, int argc);
+void			ft_add_path(char **l_paths, char *argv,
+					t_comm_path **aux_l, int pos);
+void			ft_valid_direction(t_comm_path	**comm_dir, char **argv);
+
+// func_list
+void			q_lstadd_back(t_comm_path **lst, t_comm_path *new);
+int				q_lstsize(t_comm_path *lst);
+t_comm_path		*q_lstlast(t_comm_path *lst);
+
+// ft_first_command.c
+void			ft_first_child(char **argv, int fd1[2],
+					t_comm_path *act, char **envp);
+void			ft_second_part(t_comm_path *act, int *fd1,
+					char **argv, char **envp);
+void			ft_first_part(t_comm_path *act, char **envp, char **argv);
+void			ft_infile(int fd, int fd1[2]);
 
 #endif
