@@ -31,22 +31,47 @@ char **ft_envp_path(char **envp)
 	return (0);
 }
 
+// void	ft_first_child(char **argv, int fd1[2], t_comm_path *act, char **envp)
+// {
+// 	int	fd;
+
+// 	close(fd1[0]);
+// 	fd = open(argv[1], O_RDONLY);
+// 	if (fd < 0)
+// 		exit (0);
+// 	ft_infile(fd, fd1);
+// 	if (execve(act->comm[0], act->comm, envp) < 0)
+// 		exit (127);
+// }
+
 int main(int argc, char **argv, char **envp)
 {
 	char **path;
 
+int			fd; 
 	// atexit(leaks);
 
 	if (argc == 5)
 	{
 		path = ft_envp_path(envp);
 
-		printf("primer argumento: %s\n", argv[0]);
-		printf("path primero: %s\n\n", path[0]);
-
-		// printf("Primer path: %s\n", l_paths[0]);
 		// Comprobamos el archivo de entrada
+ 		fd = open(argv[1], O_RDONLY);
+		if (fd < 0)
+			ft_file_error(argv[1]);
+		close(fd);
 		// Comprobamos el archivo de salida
+		ft_open_outfile(argv[argc - 1]);
+	
+
+		printf("Primer comando: %s\nSegundo comando %s\n\n", argv[2], argv[3]);
+		char *comando = "touch";
+		char *argus[] = {comando, "WWWW", NULL};
+		char *env[] = {"PORT=8080", NULL};
+        execve(comando, argus, env);
+
+// ft_first_child(argv[2], fd1, act, envp);
+
 		ft_freearray(path);
 	}
 	else

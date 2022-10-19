@@ -35,5 +35,19 @@
 // main.c
 void	leaks(void);
 char	**ft_paths(char **envp, int argc);
+// void	ft_first_child(char **argv, int fd1[2], t_comm_path *act, char **envp);
+
+
+// files.c
+void	ft_file_error(char *str);
+void	ft_open_infile(char *arc);
+void	ft_open_outfile(char *arc);
+
+// commands.c
+// char	**ft_arraycommands(char **argv);
+
+
+
+
 
 #endif
