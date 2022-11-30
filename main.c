@@ -6,7 +6,7 @@
 /*   By: egiron-t <egiron-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:27:15 by egiron-t          #+#    #+#             */
-/*   Updated: 2022/07/22 19:52:49 by egiron-t         ###   ########.fr       */
+/*   Updated: 2022/11/11 10:06:55 by egiron-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int main(int argc, char **argv, char **envp)
 	char **path;
 
 int			fd; 
-	// atexit(leaks);
+ atexit(leaks);
 
 	if (argc == 5)
 	{
